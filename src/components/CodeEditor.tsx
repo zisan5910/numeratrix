@@ -36,9 +36,9 @@ const CodeEditor = ({ language, code, onChange }: CodeEditorProps) => {
   };
 
   return (
-    <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 overflow-hidden">
-      <div className="flex items-center justify-between p-4 border-b border-gray-200/50 bg-white/70">
-        <h3 className="font-semibold text-gray-900">
+    <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 h-full flex flex-col">
+      <div className="flex-shrink-0 flex items-center justify-between p-3 border-b border-gray-200/50 bg-white/70">
+        <h3 className="font-semibold text-gray-900 text-sm">
           {language === 'html' ? 'HTML' : 'C'} কোড এডিটর
         </h3>
         <div className="flex space-x-2">
@@ -47,9 +47,9 @@ const CodeEditor = ({ language, code, onChange }: CodeEditorProps) => {
             size="sm"
             onClick={copyCode}
             disabled={!code}
-            className="text-blue-600 hover:bg-blue-50/70 h-9 px-3"
+            className="text-blue-600 hover:bg-blue-50/70 h-8 px-2 text-xs"
           >
-            <Copy className="w-4 h-4 mr-2" />
+            <Copy className="w-3 h-3 mr-1" />
             Copy
           </Button>
           <Button
@@ -57,14 +57,14 @@ const CodeEditor = ({ language, code, onChange }: CodeEditorProps) => {
             size="sm"
             onClick={clearCode}
             disabled={!code}
-            className="text-red-600 hover:bg-red-50/70 h-9 px-3"
+            className="text-red-600 hover:bg-red-50/70 h-8 px-2 text-xs"
           >
-            <Trash2 className="w-4 h-4 mr-2" />
+            <Trash2 className="w-3 h-3 mr-1" />
             Clear
           </Button>
         </div>
       </div>
-      <div className="relative">
+      <div className="flex-1 relative overflow-hidden">
         <textarea
           value={code}
           onChange={(e) => onChange(e.target.value)}
@@ -73,11 +73,11 @@ const CodeEditor = ({ language, code, onChange }: CodeEditorProps) => {
               ? 'এখানে HTML কোড লিখুন...'
               : 'এখানে C কোড লিখুন...'
           }
-          className="w-full min-h-[350px] p-4 font-mono text-sm bg-transparent border-0 outline-none resize-none text-gray-800 placeholder-gray-400 leading-relaxed"
+          className="w-full h-full p-3 font-mono text-sm bg-transparent border-0 outline-none resize-none text-gray-800 placeholder-gray-400 leading-relaxed"
           style={{ 
             fontFamily: 'Monaco, Menlo, "Ubuntu Mono", monospace',
-            fontSize: '14px',
-            lineHeight: '1.6',
+            fontSize: '13px',
+            lineHeight: '1.5',
             tabSize: 4
           }}
         />

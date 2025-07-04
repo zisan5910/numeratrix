@@ -22,14 +22,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white/95 backdrop-blur-sm">
+    <div className="min-h-screen bg-white/95 backdrop-blur-sm flex flex-col">
       {/* Install Prompt */}
       {showInstallPrompt && (
         <InstallPrompt onInstall={installApp} onDismiss={dismissInstall} />
       )}
 
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-40">
+      <header className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-40 flex-shrink-0">
         <div className="flex items-center justify-between p-3">
           <div className="flex items-center space-x-3">
             <HamburgerMenu />
@@ -46,13 +46,13 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="p-3 space-y-3 max-w-7xl mx-auto">
+      <main className="flex-1 p-3 space-y-3 max-w-7xl mx-auto w-full overflow-hidden">
         {/* Language Toggle */}
         <div className="flex space-x-2 bg-white/60 backdrop-blur-sm p-1 rounded-xl border border-gray-100">
           <Button
             onClick={() => setCurrentLanguage('html')}
             variant={currentLanguage === 'html' ? 'default' : 'ghost'}
-            className={`flex-1 rounded-lg transition-all ${
+            className={`flex-1 rounded-lg transition-all text-sm ${
               currentLanguage === 'html'
                 ? 'bg-white text-blue-600 shadow-sm border border-blue-100'
                 : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
@@ -63,7 +63,7 @@ const Index = () => {
           <Button
             onClick={() => setCurrentLanguage('c')}
             variant={currentLanguage === 'c' ? 'default' : 'ghost'}
-            className={`flex-1 rounded-lg transition-all ${
+            className={`flex-1 rounded-lg transition-all text-sm ${
               currentLanguage === 'c'
                 ? 'bg-white text-blue-600 shadow-sm border border-blue-100'
                 : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
@@ -83,24 +83,28 @@ const Index = () => {
         </div>
 
         {/* Editor and Preview Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-[calc(100vh-280px)] min-h-[500px]">
           {/* Code Editor */}
-          <CodeEditor
-            language={currentLanguage}
-            code={currentCode}
-            onChange={setCurrentCode}
-          />
+          <div className="h-full">
+            <CodeEditor
+              language={currentLanguage}
+              code={currentCode}
+              onChange={setCurrentCode}
+            />
+          </div>
 
           {/* Preview Section */}
-          <PreviewSection
-            language={currentLanguage}
-            code={currentCode}
-          />
+          <div className="h-full">
+            <PreviewSection
+              language={currentLanguage}
+              code={currentCode}
+            />
+          </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="text-center py-4 px-3 mt-8">
+      <footer className="text-center py-3 px-3 flex-shrink-0">
         <p className="text-gray-500 text-sm">
           এইচএসসি শিক্ষার্থীদের জন্য HTML ও C প্রোগ্রামিং শিক্ষার সহায়ক
         </p>
