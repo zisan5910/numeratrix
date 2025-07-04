@@ -46,7 +46,7 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 p-3 space-y-3 max-w-7xl mx-auto w-full overflow-hidden">
+      <main className="flex-1 p-3 space-y-3 max-w-7xl mx-auto w-full">
         {/* Language Toggle */}
         <div className="flex space-x-2 bg-white/60 backdrop-blur-sm p-1 rounded-xl border border-gray-100">
           <Button
@@ -82,10 +82,10 @@ const Index = () => {
           />
         </div>
 
-        {/* Editor and Preview Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 h-[calc(100vh-280px)] min-h-[500px]">
+        {/* Editor and Preview Grid - Dynamic height */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 min-h-[500px]">
           {/* Code Editor */}
-          <div className="h-full">
+          <div className="h-fit min-h-[500px]">
             <CodeEditor
               language={currentLanguage}
               code={currentCode}
@@ -94,7 +94,7 @@ const Index = () => {
           </div>
 
           {/* Preview Section */}
-          <div className="h-full">
+          <div className="h-fit min-h-[500px]">
             <PreviewSection
               language={currentLanguage}
               code={currentCode}

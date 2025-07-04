@@ -1,4 +1,3 @@
-
 import { useMemo } from 'react';
 
 interface PreviewSectionProps {
@@ -10,7 +9,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
   const renderHTMLPreview = () => {
     if (!code.trim()) {
       return (
-        <div className="flex items-center justify-center h-full text-gray-500">
+        <div className="flex items-center justify-center h-full min-h-[450px] text-gray-500">
           HTML কোড লিখুন প্রিভিউ দেখতে
         </div>
       );
@@ -19,7 +18,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
     return (
       <iframe
         srcDoc={code}
-        className="w-full h-full border-0"
+        className="w-full h-full min-h-[450px] border-0"
         title="HTML Preview"
         sandbox="allow-scripts allow-same-origin"
       />
@@ -344,7 +343,7 @@ n = 5
   const renderCPreview = () => {
     if (!code.trim()) {
       return (
-        <div className="flex items-center justify-center h-full text-gray-500">
+        <div className="flex items-center justify-center h-full min-h-[450px] text-gray-500">
           C কোড লিখুন বিশ্লেষণ দেখতে
         </div>
       );
@@ -353,10 +352,10 @@ n = 5
     const { algorithm, flowchart, output } = getCAlgorithm(code);
 
     return (
-      <div className="h-full overflow-y-auto space-y-3 text-sm">
+      <div className="h-auto min-h-[450px] space-y-4 text-sm p-2">
         {/* Output Section */}
-        <div className="bg-gray-900 text-green-400 p-3 rounded-lg font-mono text-xs">
-          <h4 className="text-white font-semibold mb-2 flex items-center text-sm">
+        <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-xs">
+          <h4 className="text-white font-semibold mb-3 flex items-center text-sm">
             💻 আউটপুট:
           </h4>
           <div className="whitespace-pre-wrap text-green-300 leading-relaxed">
@@ -365,13 +364,13 @@ n = 5
         </div>
 
         {/* Algorithm Section */}
-        <div className="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-400">
-          <h4 className="text-blue-900 font-semibold mb-2 flex items-center text-sm">
+        <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+          <h4 className="text-blue-900 font-semibold mb-3 flex items-center text-sm">
             🧠 অ্যালগরিদম:
           </h4>
-          <ol className="space-y-1 text-blue-800">
+          <ol className="space-y-2 text-blue-800">
             {algorithm.map((step, index) => (
-              <li key={index} className="text-xs leading-relaxed">
+              <li key={index} className="text-sm leading-relaxed">
                 <span className="font-medium">{step}</span>
               </li>
             ))}
@@ -379,11 +378,11 @@ n = 5
         </div>
 
         {/* Flowchart Section */}
-        <div className="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-400">
-          <h4 className="text-purple-900 font-semibold mb-2 flex items-center text-sm">
+        <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+          <h4 className="text-purple-900 font-semibold mb-3 flex items-center text-sm">
             📊 ফ্লোচার্ট:
           </h4>
-          <div className="text-purple-800 text-xs leading-relaxed">
+          <div className="text-purple-800 text-sm leading-relaxed">
             {flowchart}
           </div>
         </div>
@@ -392,13 +391,13 @@ n = 5
   };
 
   return (
-    <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 h-full flex flex-col">
+    <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 flex flex-col min-h-[500px] h-auto">
       <div className="flex-shrink-0 p-3 border-b border-gray-200/50 bg-white/70">
         <h3 className="font-semibold text-gray-900 text-sm">
           {language === 'html' ? 'HTML প্রিভিউ' : 'C প্রোগ্রাম বিশ্লেষণ'}
         </h3>
       </div>
-      <div className="flex-1 p-3 overflow-hidden">
+      <div className="flex-1 p-3">
         {language === 'html' ? renderHTMLPreview() : renderCPreview()}
       </div>
     </div>

@@ -36,7 +36,7 @@ const CodeEditor = ({ language, code, onChange }: CodeEditorProps) => {
   };
 
   return (
-    <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 h-full flex flex-col">
+    <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 flex flex-col min-h-[500px] h-auto">
       <div className="flex-shrink-0 flex items-center justify-between p-3 border-b border-gray-200/50 bg-white/70">
         <h3 className="font-semibold text-gray-900 text-sm">
           {language === 'html' ? 'HTML' : 'C'} কোড এডিটর
@@ -64,7 +64,7 @@ const CodeEditor = ({ language, code, onChange }: CodeEditorProps) => {
           </Button>
         </div>
       </div>
-      <div className="flex-1 relative overflow-hidden">
+      <div className="flex-1 relative">
         <textarea
           value={code}
           onChange={(e) => onChange(e.target.value)}
@@ -73,7 +73,7 @@ const CodeEditor = ({ language, code, onChange }: CodeEditorProps) => {
               ? 'এখানে HTML কোড লিখুন...'
               : 'এখানে C কোড লিখুন...'
           }
-          className="w-full h-full p-3 font-mono text-sm bg-transparent border-0 outline-none resize-none text-gray-800 placeholder-gray-400 leading-relaxed"
+          className="w-full h-full min-h-[450px] p-3 font-mono text-sm bg-transparent border-0 outline-none resize-y text-gray-800 placeholder-gray-400 leading-relaxed"
           style={{ 
             fontFamily: 'Monaco, Menlo, "Ubuntu Mono", monospace',
             fontSize: '13px',
