@@ -232,7 +232,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
             </div>
             <div className="text-base">↓</div>
             <div className="bg-orange-100 border-2 border-orange-500 text-orange-800 font-semibold text-sm w-18 h-18 flex items-center justify-center transform rotate-45">
-              <div className="transform -rotate-45 text-sm">i≤n?</div>
+              <div className="transform -rotate-45 text-sm">{'i≤n?'}</div>
             </div>
             <div className="flex justify-between w-full text-sm">
               <div className="flex flex-col items-center space-y-2">
@@ -288,7 +288,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
             </div>
             <div className="text-base">↓</div>
             <div className="bg-orange-100 border-2 border-orange-500 text-orange-800 font-semibold text-sm w-18 h-18 flex items-center justify-center transform rotate-45">
-              <div className="transform -rotate-45 text-sm">i≤n?</div>
+              <div className="transform -rotate-45 text-sm">{'i≤n?'}</div>
             </div>
             <div className="flex justify-between w-full text-sm">
               <div className="flex flex-col items-center space-y-2">
@@ -364,7 +364,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
           '৪. "তিনটি সংখ্যা প্রবেশ করুন:" বার্তা প্রিন্ট করুন',
           '৫. scanf() দিয়ে তিনটি সংখ্যা ইনপুট নিন',
           '৬. if শর্তের মাধ্যমে সর্বোচ্চ সংখ্যা খুঁজুন',
-          '১০. সর্বোচ্চ সংখ্যা প্রিন্ট করুন',
+          '৭. সর্বোচ্চ সংখ্যা প্রিন্ট করুন',
           '৮. return 0 দিয়ে প্রোগ্রাম শেষ করুন'
         ],
         flowchart: (
@@ -378,7 +378,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
             </div>
             <div className="text-base">↓</div>
             <div className="bg-orange-100 border-2 border-orange-500 text-orange-800 font-semibold text-sm w-20 h-20 flex items-center justify-center transform rotate-45">
-              <div className="transform -rotate-45 text-xs">num1>num2 && num1>num3?</div>
+              <div className="transform -rotate-45 text-xs">{'num1>num2 && num1>num3?'}</div>
             </div>
             <div className="text-base">↓</div>
             <div className="bg-purple-100 border-2 border-purple-500 px-3 py-2 text-purple-800 font-semibold text-sm transform skew-x-6">
@@ -424,7 +424,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
             </div>
             <div className="text-base">↓</div>
             <div className="bg-orange-100 border-2 border-orange-500 text-orange-800 font-semibold text-sm w-18 h-18 flex items-center justify-center transform rotate-45">
-              <div className="transform -rotate-45 text-sm">i≤num/2?</div>
+              <div className="transform -rotate-45 text-sm">{'i≤num/2?'}</div>
             </div>
             <div className="flex justify-between w-full text-sm">
               <div className="flex flex-col items-center space-y-2">
@@ -436,7 +436,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
               <div className="flex flex-col items-center space-y-2">
                 <span className="text-gray-700 font-bold">হ্যাঁ</span>
                 <div className="bg-orange-100 border-2 border-orange-500 px-2 py-1 text-orange-800 font-semibold text-sm transform rotate-45">
-                  <div className="transform -rotate-45 text-xs">num%i==0?</div>
+                  <div className="transform -rotate-45 text-xs">{'num%i==0?'}</div>
                 </div>
               </div>
             </div>
@@ -607,7 +607,7 @@ const PreviewSection = ({ language, code }: PreviewSectionProps) => {
             </div>
           </div>
         ),
-        output: `আউটপুট:\n> C প্রোগ্রাম সফলভাবে কার্যকর হয়েছে\n> প্রোগ্রামের ফলাফল প্রদর্শিত হয়েছে`
+        output: `আউটপুট:\n{'>'} C প্রোগ্রাম সফলভাবে কার্যকর হয়েছে\n{'>'} প্রোগ্রামের ফলাফল প্রদর্শিত হয়েছে`
       };
     }
 
