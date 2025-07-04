@@ -1,0 +1,27 @@
+
+{
+  "name": "Theta Code",
+  "short_name": "ThetaCode",
+  "description": "HSC Programming Learning App for HTML & C",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/xdPHXsTR/Picsart-25-07-03-17-55-04-190.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.postimg.cc/xdPHXsTR/Picsart-25-07-03-17-55-04-190.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "bn"
+}
