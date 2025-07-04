@@ -83,9 +83,9 @@ const Index = () => {
         </div>
 
         {/* Editor and Preview Grid - Dynamic height */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 min-h-[500px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           {/* Code Editor */}
-          <div className="h-fit min-h-[500px]">
+          <div className="h-fit">
             <CodeEditor
               language={currentLanguage}
               code={currentCode}
@@ -94,7 +94,7 @@ const Index = () => {
           </div>
 
           {/* Preview Section */}
-          <div className="h-fit min-h-[500px]">
+          <div className="h-fit">
             <PreviewSection
               language={currentLanguage}
               code={currentCode}
@@ -102,13 +102,6 @@ const Index = () => {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="text-center py-3 px-3 flex-shrink-0">
-        <p className="text-gray-500 text-sm">
-          এইচএসসি শিক্ষার্থীদের জন্য HTML ও C প্রোগ্রামিং শিক্ষার সহায়ক
-        </p>
-      </footer>
     </div>
   );
 };
